@@ -11,7 +11,8 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         try {
             const stream = await navigator.mediaDevices.getDisplayMedia({
                 video: { mediaSource: "tab" },
-                audio: true
+                audio: false,
+                preferCurrentTab: true,
             });
 
             mediaRecorder = new MediaRecorder(stream, { mimeType: "video/webm" });
