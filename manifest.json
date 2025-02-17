@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Website Screen Recorder & Logger",
+  "version": "1.0",
+  "description": "Capture screen, network logs, and console logs of a website.",
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "tabCapture",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
