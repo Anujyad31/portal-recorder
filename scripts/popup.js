@@ -6,7 +6,7 @@ document.querySelector("#start").addEventListener("click", async () => {
     });
 });
 
-document.getElementById("stop").addEventListener("click", () => {
+document.querySelector("#stop").addEventListener("click", () => {
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         chrome.tabs.sendMessage(tabs[0].id, { action: "stopRecording" });
     });
