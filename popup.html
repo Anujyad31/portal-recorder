@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Screen Recorder</title>
+  <title>Screen Recorder</title>
+  <style>
+    body {
+      width: 300px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+    }
+  </style>
 </head>
+
 <body>
-<button id="start">Start Recording</button>
-<button id="stop">Stop Recording</button>
-<script src="popup.js"></script>
+  <h2>User Journey Recorder</h2>
+  <button id="start">Start Recording</button>
+  <button id="stop">Stop Recording</button>
+  <button id="export" disabled>Export Data</button>
+  <script src="popup.js"></script>
 </body>
+
 </html>
