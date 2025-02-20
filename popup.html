@@ -5,22 +5,49 @@
   <title>Screen Recorder</title>
   <style>
     body {
-      width: 300px;
-      padding: 10px;
+      width: 200px;
+      padding: 0px 10px 10px 10px;
       font-family: Arial, sans-serif;
+      background-color: #f0f4f8; 
+      color: #002663;
+      
+    }
+
+    h2 {
+      padding-top: 0px;
+      text-align: center;
+      color: #004b87; 
     }
 
     button {
       width: 100%;
       padding: 10px;
       margin: 5px 0;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #1b79bd; 
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button img {
+      margin-right: 8px;
+    }
+
+    button:hover {
+      background-color: #005a9c; 
     }
   </style>
 </head>
 
 <body>
   <h2>User Journey Recorder</h2>
-  <button id="record">Start Recording</button>
+  <button id="record">
+    Start Recording
+  </button>
   <button id="export">Export</button>
   <script src="popup.js"></script>
 </body>
