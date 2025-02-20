@@ -1,4 +1,4 @@
-# User Journey Recorder
+# One CaptureKit
 A chrome extension to record user journey on a website to be used by servicing team. 
 
 ## Background
@@ -17,7 +17,7 @@ We are building a chrome extension to solve this problem as below.
 
 ## Architecture
 
-![User Journey Recorder Architecture](user-journey-recorder.drawio.png)
+![One CaptureKit Architecture](user-journey-recorder.drawio.png)
 
 ## Challenges
 Currently, Amex does not allow installing chrome extension from the WebStore or side-loading it locally. All chrome extensions are blocked by default and only a select few are white-listed from the ITPR team. 

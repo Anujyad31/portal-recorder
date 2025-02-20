@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "User Journey Recorder",
+  "name": "One CaptureKit",
   "version": "1.0",
   "description": "Capture screen, network logs, and console logs of a website.",
   "permissions": [
