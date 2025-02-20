@@ -15,6 +15,10 @@ We are building a chrome extension to solve this problem as below.
 3. The recordings along with network and console logs will be exported into an encrypted zip file and uploaded to a remote location.
 4. Finally, an incident ticket will be created for the same with link to the recording.
 
+## Architecture
+
+![User Journey Recorder Architecture](user-journey-recorder.drawio.png)
+
 ## Challenges
 Currently, Amex does not allow installing chrome extension from the WebStore or side-loading it locally. All chrome extensions are blocked by default and only a select few are white-listed from the ITPR team. 
 
