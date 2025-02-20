@@ -2,6 +2,7 @@ console.log("Extension loaded");
 
 document.addEventListener("DOMContentLoaded", () => {
   const recordButton = document.querySelector("#record");
+  const exportButton = document.querySelector("#export");
 
   // Load the button state from storage
   chrome.storage.local.get(["isRecording"], (result) => {
@@ -40,5 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
         chrome.storage.local.set({ isRecording: false });
       }
     });
+  });
+
+  exportButton.addEventListener("click", () => {
+    chrome.runtime.sendMessage({ action: "exportData" });
   });
 });

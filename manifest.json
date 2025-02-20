@@ -10,7 +10,8 @@
     "scripting",
     "webRequest",
     "debugger",
-    "storage"
+    "storage",
+    "downloads"
   ],
   "host_permissions": ["<all_urls>"],
   "content_scripts": [

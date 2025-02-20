@@ -25,7 +25,9 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
             mediaRecorder.onstop = async () => {
                 console.log("Recording stopped");
                 const blob = new Blob(chunks, { type: "video/webm" });
-                storeFile("recording.webm", blob);
+                const arrayBuffer = await blob.arrayBuffer();
+                const base64String = arrayBufferToBase64(arrayBuffer);
+                chrome.storage.local.set({ recordingBlob: base64String });
             };
 
             mediaRecorder.start();
@@ -38,19 +40,15 @@ chrome.runtime.onMessage.addListener(async (request, sender, sendResponse) => {
         if (mediaRecorder) {
             mediaRecorder.stop();
         }
-        const networkRequests = await chrome.storage.local.get(["networkRequests"])
-        const blob = new Blob([JSON.stringify(networkRequests.networkRequests, null, 2)], { type: "application/json" });
-        storeFile("network_requests.json", blob);
     }
 });
 
-// Function to store the file
-function storeFile(name, data) {
-    const url = URL.createObjectURL(data);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = name;
-    document.body.appendChild(a);
-    a.click();
-    URL.revokeObjectURL(url);
+function arrayBufferToBase64(buffer) {
+    let binary = '';
+    const bytes = new Uint8Array(buffer);
+    const len = bytes.byteLength;
+    for (let i = 0; i < len; i++) {
+        binary += String.fromCharCode(bytes[i]);
+    }
+    return window.btoa(binary);
 }
